@@ -171,6 +171,7 @@ function startHubEntrance() {
 		routeLabel.textContent = "DREAM REALM / CHOOSE A PATH";
 		track("entrance_completed", "complete");
 		track("hub_entered", "first", { tower_state: ownedUnlocks.has("effect.dance.restored-pulse") ? "active" : "dormant" });
+		notifyChallengeStateChange("entrance_completed");
 	}, 7600);
 
 	updateHubTower();
@@ -621,11 +622,13 @@ async function recordPerformance() {
 		document.querySelector("#record-video").disabled = false;
 		document.querySelector("#export-note").textContent = `Video ready: ${type}. It contains outfit ${names.outfit[creator.outfit]}, background ${names.background[creator.background]}, ${names.movement[creator.movement]} and ${creator.effect}/${creator.resultCategory} effects.`;
 		track("video_export_ready", creator.exportFileName, { bytes: creator.videoBlob.size, mime_type: type, outcome_key: creator.outcomeKey });
+		notifyChallengeStateChange("video_export_ready");
 	});
 	recorder.addEventListener("error", event => {
 		document.querySelector("#record-video").disabled = false;
 		document.querySelector("#export-note").textContent = `Video recording failed: ${event.error?.message || "unknown error"}`;
 		track("video_export_error", event.error?.name || "unknown");
+		notifyChallengeStateChange("video_export_error");
 	});
 
 	track("video_export_started", creator.outcomeKey);
@@ -686,25 +689,223 @@ function returnHub() {
 	track("hub_entered", "return", { tower_state: "active" });
 }
 
+function challengeError(code, message) {
+	const error = new Error(message);
+	error.code = code;
+	return error;
+}
+
+function activeScreenId() {
+	return document.querySelector(".screen.active")?.id || "unknown";
+}
+
+function missionScore() {
+	return Math.max(0, 100 - mission.incorrect * 15);
+}
+
+function availableChallengeActions() {
+	const screen = activeScreenId();
+	const actions = [];
+	if (screen === "screen-access") actions.push("activate_portal_human_control");
+	if (screen === "screen-hub" && !hubPaths.hidden) actions.push("start_dream_realm_route");
+	if (screen === "screen-mission" && mission.accepting) actions.push("submit_dance_signal");
+	if (screen === "screen-murk") actions.push("resolve_murk_doubt");
+	if (screen === "screen-creator") actions.push("set_creator_choices", "prepare_performance");
+	if (screen === "screen-performance") {
+		actions.push("record_video_human_control");
+		if (creator.videoBlob) actions.push("send_output_to_tower");
+	}
+	if (screen === "screen-tower") actions.push("return_to_hub");
+	return actions;
+}
+
+function getChallengeState() {
+	const screen = activeScreenId();
+	return {
+		applicationBuild: BUILD_VERSION,
+		screen,
+		room: currentRoom(),
+		route: creator.entryMode,
+		hub: {
+			entranceComplete: screen === "screen-hub" && !hubPaths.hidden,
+			towerActive: ownedUnlocks.has("effect.dance.restored-pulse") || localStorage.getItem("dreamRealmTowerActive") === "true"
+		},
+		mission: {
+			phase: mission.phase,
+			acceptingInput: mission.accepting,
+			inputIndex: mission.inputIndex,
+			cueCount: mission.pattern.length,
+			correctInputs: mission.correct,
+			incorrectInputs: mission.incorrect,
+			score: missionScore(),
+			corruptionRepaired: mission.corruptionRepaired,
+			murkChoice: mission.murkChoice,
+			resultCategory: mission.gatewayBaseResult
+		},
+		creator: {
+			outfit: names.outfit[creator.outfit],
+			background: names.background[creator.background],
+			movement: names.movement[creator.movement],
+			effect: creator.effect,
+			resultCategory: creator.resultCategory,
+			outcomeKey: creator.outcomeKey || null,
+			performancePrepared: creator.frames.length === PERFORMANCE_FRAMES && Boolean(creator.backgroundImage),
+			videoReady: Boolean(creator.videoBlob),
+			exportFileName: creator.exportFileName || null
+		},
+		unlocks: [...ownedUnlocks],
+		availableActions: availableChallengeActions()
+	};
+}
+
+function notifyChallengeStateChange(source) {
+	window.dispatchEvent(new CustomEvent("dreamrealm:statechange", {
+		detail: { source, state: getChallengeState() }
+	}));
+}
+
+function assertScreen(expected, action) {
+	const actual = activeScreenId();
+	if (actual !== expected) {
+		throw challengeError(
+			"INVALID_STATE",
+			`${action} is only available on ${expected}; the current screen is ${actual}.`
+		);
+	}
+}
+
+const creatorChoiceValues = {
+	outfit: { neon: 1, glamour: 2, street: 3 },
+	background: { neon: 1, glamour: 2, street: 3 },
+	movement: { pulse_step: 1, arc_turn: 2, power_finish: 3 }
+};
+
+const DreamRealmChallenge = Object.freeze({
+	getState() {
+		return getChallengeState();
+	},
+
+	startRoute(route) {
+		assertScreen("screen-hub", "Starting a Dream Realm route");
+		if (hubPaths.hidden) {
+			throw challengeError("HUB_NOT_READY", "The portal entrance is still playing. Wait until the HUB paths are visible.");
+		}
+		if (route === "gateway") enterGateway();
+		else if (route === "creator") enterCreatorDirect();
+		else throw challengeError("INVALID_INPUT", "route must be either 'gateway' or 'creator'.");
+		notifyChallengeStateChange("start_dream_realm_route");
+		return getChallengeState();
+	},
+
+	submitDanceSignal(signal) {
+		assertScreen("screen-mission", "Submitting a Dance signal");
+		if (!Number.isInteger(signal) || signal < 1 || signal > 4) {
+			throw challengeError("INVALID_INPUT", "signal must be an integer from 1 to 4.");
+		}
+		if (!mission.accepting) {
+			throw challengeError("INPUT_NOT_READY", "The mission is currently showing cues. Wait until the room asks for input.");
+		}
+		handleSignal(signal - 1, "webmcp");
+		notifyChallengeStateChange("submit_dance_signal");
+		return getChallengeState();
+	},
+
+	resolveMurkDoubt(choice) {
+		assertScreen("screen-murk", "Resolving Murk's doubt");
+		if (!['evidence', 'doubt'].includes(choice)) {
+			throw challengeError("INVALID_INPUT", "choice must be either 'evidence' or 'doubt'.");
+		}
+		chooseMurk(choice);
+		notifyChallengeStateChange("resolve_murk_doubt");
+		return getChallengeState();
+	},
+
+	setCreatorChoices({ outfit, background, movement, effect }) {
+		assertScreen("screen-creator", "Setting creator choices");
+		const values = { outfit, background, movement };
+		for (const [category, value] of Object.entries(values)) {
+			if (!(value in creatorChoiceValues[category])) {
+				throw challengeError("INVALID_INPUT", `${category} has an unsupported value: ${String(value)}.`);
+			}
+		}
+		if (!['creator', 'restored'].includes(effect)) {
+			throw challengeError("INVALID_INPUT", "effect must be either 'creator' or 'restored'.");
+		}
+		if (effect === "restored" && !ownedUnlocks.has("effect.dance.restored-pulse")) {
+			throw challengeError("LOCKED_CHOICE", "The Restored Pulse effect is locked. Complete a non-Noiz Gateway result first.");
+		}
+
+		for (const [category, value] of Object.entries(values)) {
+			const numericValue = creatorChoiceValues[category][value];
+			const button = document.querySelector(`.creator-choice[data-category="${category}"][data-value="${numericValue}"]`);
+			chooseCreator(category, numericValue, button);
+		}
+		const effectButton = document.querySelector(`.effect-choice[data-effect="${effect}"]`);
+		chooseEffect(effect, effectButton);
+		notifyChallengeStateChange("set_creator_choices");
+		return getChallengeState();
+	},
+
+	async preparePerformance() {
+		assertScreen("screen-creator", "Preparing a performance");
+		await buildPerformance();
+		notifyChallengeStateChange("prepare_performance");
+		return getChallengeState();
+	},
+
+	sendOutputToTower() {
+		assertScreen("screen-performance", "Sending an output to the Tower");
+		if (!creator.videoBlob) {
+			throw challengeError("VIDEO_NOT_READY", "Record the prepared performance with the visible Record video control before sending it to the Tower.");
+		}
+		sendToTower();
+		notifyChallengeStateChange("send_output_to_tower");
+		return getChallengeState();
+	},
+
+	returnToHub() {
+		assertScreen("screen-tower", "Returning to the HUB");
+		returnHub();
+		notifyChallengeStateChange("return_to_hub");
+		return getChallengeState();
+	}
+});
+
+window.DreamRealmChallenge = DreamRealmChallenge;
+
 document.querySelector("#activate-portal").addEventListener("click", () => {
 	ensureAudio();
 	track("portal_activated", "click");
 	startHubEntrance();
+	notifyChallengeStateChange("portal_activated");
 });
-document.querySelector("#gateway-entry").addEventListener("click", enterGateway);
-document.querySelector("#creator-entry").addEventListener("click", enterCreatorDirect);
+document.querySelector("#gateway-entry").addEventListener("click", () => DreamRealmChallenge.startRoute("gateway"));
+document.querySelector("#creator-entry").addEventListener("click", () => DreamRealmChallenge.startRoute("creator"));
 
-signalButtons.forEach(button => button.addEventListener("click", event => handleSignal(Number(button.dataset.signal), event.pointerType || "mouse")));
+signalButtons.forEach(button => button.addEventListener("click", event => {
+	if (!mission.accepting) return;
+	handleSignal(Number(button.dataset.signal), event.pointerType || "mouse");
+	notifyChallengeStateChange("human_dance_signal");
+}));
 window.addEventListener("keydown", event => {
 	const key = Number(event.key);
-	if (key >= 1 && key <= 4) handleSignal(key - 1, "keyboard");
+	if (key >= 1 && key <= 4 && mission.accepting) {
+		handleSignal(key - 1, "keyboard");
+		notifyChallengeStateChange("human_dance_signal");
+	}
 });
 
-document.querySelectorAll("[data-murk]").forEach(button => button.addEventListener("click", () => chooseMurk(button.dataset.murk)));
-document.querySelectorAll(".creator-choice").forEach(button => button.addEventListener("click", () => chooseCreator(button.dataset.category, button.dataset.value, button)));
-document.querySelectorAll(".effect-choice").forEach(button => button.addEventListener("click", () => chooseEffect(button.dataset.effect, button)));
+document.querySelectorAll("[data-murk]").forEach(button => button.addEventListener("click", () => DreamRealmChallenge.resolveMurkDoubt(button.dataset.murk)));
+document.querySelectorAll(".creator-choice").forEach(button => button.addEventListener("click", () => {
+	chooseCreator(button.dataset.category, button.dataset.value, button);
+	notifyChallengeStateChange("human_creator_choice");
+}));
+document.querySelectorAll(".effect-choice").forEach(button => button.addEventListener("click", () => {
+	chooseEffect(button.dataset.effect, button);
+	notifyChallengeStateChange("human_creator_choice");
+}));
 
-document.querySelector("#build-performance").addEventListener("click", () => buildPerformance().catch(error => {
+document.querySelector("#build-performance").addEventListener("click", () => DreamRealmChallenge.preparePerformance().catch(error => {
 	console.error(error);
 	document.querySelector("#creator-clues").textContent = error.message;
 	track("performance_load_error", error.message);
@@ -720,8 +921,8 @@ document.querySelector("#record-video").addEventListener("click", () => recordPe
 	track("video_export_error", error.message);
 }));
 document.querySelector("#download-video").addEventListener("click", downloadVideo);
-document.querySelector("#send-tower").addEventListener("click", sendToTower);
-document.querySelector("#return-hub").addEventListener("click", returnHub);
+document.querySelector("#send-tower").addEventListener("click", () => DreamRealmChallenge.sendOutputToTower());
+document.querySelector("#return-hub").addEventListener("click", () => DreamRealmChallenge.returnToHub());
 
 soundToggle.addEventListener("click", () => {
 	if (!audioEnabled) {
