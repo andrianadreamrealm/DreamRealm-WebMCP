@@ -1,0 +1,21 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+
+# Local test output
+test-results/
+*.log
+*.webm
+*.mp4
+DreamRealm-events-*.json
+
+# Never include private source projects or archives
+*.c3p
+*.uproject
+*.uasset
+*.umap
+*.zip
+checkpoints/

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="theme-color" content="#050714">
+	<title>Dream Realm — Integrated Creator Slice</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main id="app">
+		<header class="utility-bar">
+			<div>
+				<span class="wordmark">DREAM REALM</span>
+				<span id="route-label">PRIVATE ACCESS</span>
+			</div>
+			<div>
+				<button id="sound-toggle" class="quiet-control" type="button">Sound off</button>
+				<button id="event-export" class="quiet-control" type="button">Event JSON</button>
+			</div>
+		</header>
+
+		<section id="screen-access" class="screen active access-screen">
+			<div class="access-signal">
+				<div class="signal-rings" aria-hidden="true"></div>
+				<p>PRIVATE SIGNAL / PLACEHOLDER</p>
+				<h1>Dream Realm frequency found</h1>
+				<button id="activate-portal" class="primary-action" type="button">Activate portal</button>
+			</div>
+		</section>
+
+		<section id="screen-hub" class="screen hub-screen">
+			<div id="hub-stage" class="hub-stage" aria-label="Dream Realm micro-HUB">
+				<img class="hub-plate" src="assets/hub/option-c-empty-plate.png" alt="">
+				<img id="hub-naya" class="hub-naya" alt="Naya entering Dream Realm">
+				<div class="portal-residue" aria-hidden="true"></div>
+				<div id="tower-pulse" class="tower-pulse" aria-hidden="true"></div>
+				<div id="hub-intro-copy" class="hub-intro-copy">
+					<p>ENTRY CONFIRMED</p>
+					<strong>Naya is inside Dream Realm</strong>
+				</div>
+				<div id="hub-paths" class="hub-paths" hidden>
+					<button id="gateway-entry" class="world-entry gateway-entry" type="button">
+						<span>RESTORE DANCE SIGNAL</span>
+						<small>Gateway Mission</small>
+					</button>
+					<button id="creator-entry" class="world-entry creator-entry" type="button">
+						<span>CREATE NOW</span>
+						<small>Direct Creator Access</small>
+					</button>
+				</div>
+				<div class="sealed-room music-seal"><span>MUSIC SIGNAL SEALED</span></div>
+				<div class="sealed-room fashion-seal"><span>FASHION SIGNAL SEALED</span></div>
+				<div id="tower-state" class="tower-state">TOWER / DORMANT</div>
+			</div>
+		</section>
+
+		<section id="screen-mission" class="screen content-screen">
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">DANCE GATEWAY / SIGNAL SYNC</p>
+					<h2 id="mission-title">Wake the first signal</h2>
+				</div>
+				<div class="mission-score"><span>SYNC</span><strong id="mission-score">100</strong></div>
+			</div>
+			<p id="mission-instruction" class="instruction">The room will teach the first action through light.</p>
+			<div id="signal-grid" class="signal-grid">
+				<button class="signal signal-1" data-signal="0" type="button"><b>1</b><span>Pulse</span></button>
+				<button class="signal signal-2" data-signal="1" type="button"><b>2</b><span>Sweep</span></button>
+				<button class="signal signal-3" data-signal="2" type="button"><b>3</b><span>Lift</span></button>
+				<button class="signal signal-4" data-signal="3" type="button"><b>4</b><span>Snap</span></button>
+			</div>
+			<div class="mission-footer">
+				<div id="mission-progress" class="mission-progress"></div>
+				<p id="mission-feedback" role="status" aria-live="polite">Noiz is inside the room signal.</p>
+			</div>
+		</section>
+
+		<section id="screen-murk" class="screen content-screen">
+			<div class="murk-layout">
+				<div class="murk-orb" aria-hidden="true">M</div>
+				<div>
+					<p class="eyebrow">MURK / DOUBT</p>
+					<h2>“Maybe the room never wanted confidence.”</h2>
+					<p>The signal evidence still says <strong>SHARP / CITY / CONFIDENT</strong>. Murk briefly dims it, but does not change the pattern.</p>
+					<div class="two-actions">
+						<button class="path-choice" data-murk="evidence" type="button"><strong>Trust the signal</strong><span>Keep the evidence you restored</span></button>
+						<button class="path-choice" data-murk="doubt" type="button"><strong>Follow the doubt</strong><span>Attempt an alternate interpretation</span></button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="screen-creator" class="screen content-screen creator-screen">
+			<div class="section-heading">
+				<div>
+					<p id="creator-route" class="eyebrow">CREATOR TOOLS</p>
+					<h2>Compose Naya's performance</h2>
+				</div>
+				<p id="creator-clues" class="creator-clues">Starter tools are available without a mission.</p>
+			</div>
+
+			<div class="creator-layout">
+				<div id="creator-preview" class="creator-preview">
+					<img id="creator-background" alt="">
+					<img id="creator-naya" alt="Selected Naya outfit">
+					<div id="creator-effect" class="creator-effect"></div>
+					<div class="preview-label"><span id="preview-outfit">NEON</span><span id="preview-move">PULSE STEP</span></div>
+				</div>
+
+				<div class="choice-panel">
+					<div class="choice-group">
+						<h3>Outfit</h3>
+						<div class="choice-row">
+							<button class="creator-choice selected" data-category="outfit" data-value="1" type="button">Neon</button>
+							<button class="creator-choice" data-category="outfit" data-value="2" type="button">Glamour</button>
+							<button class="creator-choice" data-category="outfit" data-value="3" type="button">Street</button>
+						</div>
+					</div>
+					<div class="choice-group">
+						<h3>Background</h3>
+						<div class="choice-row">
+							<button class="creator-choice selected" data-category="background" data-value="1" type="button">Neon</button>
+							<button class="creator-choice" data-category="background" data-value="2" type="button">Glamour</button>
+							<button class="creator-choice" data-category="background" data-value="3" type="button">Street</button>
+						</div>
+					</div>
+					<div class="choice-group">
+						<h3>Movement</h3>
+						<div class="choice-row">
+							<button class="creator-choice selected" data-category="movement" data-value="1" type="button">Pulse Step</button>
+							<button class="creator-choice" data-category="movement" data-value="2" type="button">Arc Turn</button>
+							<button class="creator-choice" data-category="movement" data-value="3" type="button">Power Finish</button>
+						</div>
+					</div>
+					<div class="choice-group">
+						<h3>Outcome effect</h3>
+						<div class="choice-row effects">
+							<button class="effect-choice selected" data-effect="creator" type="button">Creator Signal</button>
+							<button id="restored-effect-choice" class="effect-choice" data-effect="restored" type="button" disabled>Restored Pulse / locked</button>
+						</div>
+					</div>
+					<button id="build-performance" class="primary-action wide" type="button">Build performance</button>
+				</div>
+			</div>
+		</section>
+
+		<section id="screen-performance" class="screen content-screen performance-screen">
+			<div class="section-heading">
+				<div>
+					<p id="performance-status" class="eyebrow">CREATOR SIGNAL READY</p>
+					<h2 id="performance-title">Naya performance preview</h2>
+				</div>
+				<p id="performance-key"></p>
+			</div>
+			<div class="performance-frame">
+				<canvas id="performance-canvas" width="1280" height="720"></canvas>
+				<div id="performance-loading" class="performance-loading">Loading selected performance frames…</div>
+			</div>
+			<div class="performance-actions">
+				<button id="replay-performance" class="secondary-action" type="button">Replay preview</button>
+				<button id="retry-mission" class="secondary-action" type="button" hidden>Retry Dance Gateway</button>
+				<button id="record-video" class="primary-action" type="button">Generate video export</button>
+				<a id="download-video" class="primary-action download-action" hidden>Download video</a>
+				<button id="send-tower" class="secondary-action" type="button" disabled>Send signal to Tower</button>
+			</div>
+			<p id="export-note" class="export-note">The downloaded video is recorded from the actual selected outfit, background, movement and outcome effect.</p>
+		</section>
+
+		<section id="screen-tower" class="screen content-screen tower-screen">
+			<div class="tower-visual">
+				<div class="tower-spire">
+					<div class="tower-display">
+						<canvas id="tower-canvas" width="480" height="270"></canvas>
+					</div>
+				</div>
+				<div class="tower-copy">
+					<p id="tower-status" class="eyebrow">CREATOR SIGNAL LIVE</p>
+					<h2 id="tower-title">Your output entered Dream Realm</h2>
+					<p id="tower-detail"></p>
+					<div id="unlock-card" class="unlock-card" hidden>
+						<span>UNLOCKED</span>
+						<strong>Restored Pulse</strong>
+						<p>Available in Direct Creator Tools.</p>
+					</div>
+					<button id="return-hub" class="primary-action" type="button">Return to Dream Realm</button>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<span>Integrated private vertical slice</span>
+			<span id="build-id">creator-slice-0.2.0</span>
+		</footer>
+	</main>
+	<script src="app.js"></script>
+</body>
+</html>
