@@ -71,7 +71,7 @@ The latest completed local run is recorded in [tests/TEST-RESULTS-2026-08-29.md]
 
 `netlify.toml` is configuration only. No Netlify production site or remote repository is connected by this project.
 
-Before any public deployment or repository creation, every media category in [NOTICE.md](NOTICE.md) must be explicitly cleared by the rights holder.
+The rights holder cleared every inventoried media category for this challenge release on 2026-08-29. See [NOTICE.md](NOTICE.md). Dream Realm characters, brand, visual identity, and media remain proprietary and are excluded from the MIT software license.
 
 The official submission also requires a public repository, a publicly reachable live URL, and a public YouTube demo. None has been created yet; those are intentional release gates requiring explicit approval.
 

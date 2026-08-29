@@ -19,7 +19,7 @@ Current official deadline: **September 3, 2026 at 1:00 pm Pacific Time**. The ru
 | 4 | Public challenge repository contains all required source/assets/instructions | **READY locally; NOT PUBLIC** | The candidate repository contains the minimal functional `site/`, server/config, README, provenance, tests, license, notice, and submission docs. No remote exists. Publication needs #7 clearance and explicit approval. |
 | 5 | Visible open-source license | **PASS locally** | Standard MIT `LICENSE` is at repository root for code/docs. On GitHub, confirm license detection and set the repository About license field if necessary. Media remains outside the MIT grant under `NOTICE.md`. |
 | 6 | Clear pre-existing/challenge-added separation | **PASS** | `BASELINE.md` records source paths, pre-August-25 timestamps, build version, SHA-256 hashes, selected-media manifest hash, and exact scope. Dated Git commits separate baseline/controller/tools/fix/docs. |
-| 7 | No secrets/private source/partner material/unauthorized assets | **PARTIAL — LEGAL BLOCKER** | Technical scan passes: no credentials, private URLs, Construct/Unreal source, archives, checkpoints, executables, partner names, or pitch material. However, written public-use clearance for the 1,318 Dream Realm media files was not found. `NOTICE.md` inventories every category. Rights-holder approval or cleared replacement assets are required. |
+| 7 | No secrets/private source/partner material/unauthorized assets | **PASS** | Technical scan passes: no credentials, private URLs, Construct/Unreal source, archives, checkpoints, executables, partner names, or pitch material. The owner confirmed public-use and redistribution rights for the 1,318 inventoried media files on 2026-08-29. Dream Realm media remains proprietary and outside the MIT license. |
 | 8 | README install/test instructions | **PASS** | `README.md` includes provenance, local run, route/tool behavior, static tests, deployment boundary, and licensing boundary. Smoke matrix and dated results are linked. |
 | 9 | Working public deployment accessible to judges | **NOT DONE BY INSTRUCTION** | `netlify.toml` is ready, but no production site is connected or deployed. After clearance/approval, deploy, verify HTTPS/assets/headers, and keep it free and accessible through the judging period. |
 | 10 | Successful ChatGPT in-app browser or WebMCP Chrome test | **PASS locally; PUBLIC RETEST REQUIRED** | ChatGPT/Codex in-app browser discovered all eight tools and completed valid/invalid state tests against localhost. Repeat the complete test on the final public URL before submission. |
@@ -28,13 +28,12 @@ Current official deadline: **September 3, 2026 at 1:00 pm Pacific Time**. The ru
 
 ## Release decision
 
-**NO-GO for public release today.** The software and local tests are ready, but requirement #7 lacks documented media publication rights, while #4, #9, and the YouTube portion of #12 intentionally require public actions that have not been authorized.
+**RELEASE AUTHORIZED, ACCOUNT ACCESS PENDING.** The software, local tests, and media clearance are ready. The remaining gates are GitHub/Netlify authentication, public deployment verification, YouTube upload authorization, and the entrant's final Devpost legal confirmation/Submit.
 
 ## Shortest compliant path after approval
 
-1. Obtain written confirmation that every media category in `NOTICE.md` may be included in the public repository, public deployment, and public YouTube demo, or replace uncertain media with cleared assets and rerun the inventory/tests.
-2. Create a public GitHub repository from this exact local history; verify all assets are present, MIT is detected, no large-file limit is exceeded, and no private files enter the commit.
-3. Deploy `site/` using `netlify.toml`; do not alter the existing Dream Realm marketing site or production Netlify project.
-4. Run the full local matrix against the public HTTPS URL in ChatGPT's in-app browser; repeat MediaRecorder/download and check console/network errors.
-5. Record and rights-review the 2:48 English demo, upload it publicly to YouTube, and verify audio/captions.
-6. Fill the Devpost form in English with the live URL, public repository, public YouTube URL, testing instructions, and the final description; perform one last rules/date check before submission.
+1. Create a public GitHub repository from this exact local history; verify all assets are present, MIT is detected, no large-file limit is exceeded, and no private files enter the commit.
+2. Deploy `site/` using `netlify.toml`; do not alter the existing Dream Realm marketing site or production Netlify project.
+3. Run the full local matrix against the public HTTPS URL in ChatGPT's in-app browser; repeat MediaRecorder/download and check console/network errors.
+4. Record and rights-review the 2:48 English demo, upload it publicly to YouTube after upload authorization, and verify audio/captions.
+5. Fill the Devpost form in English with the live URL, public repository, public YouTube URL, testing instructions, and the final description; stop before the entrant's legal confirmation and final Submit.

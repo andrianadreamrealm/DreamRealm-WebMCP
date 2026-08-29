@@ -40,4 +40,4 @@ Both guards are present in the shared controller and covered by the documented m
 - Public deployment and remote judge access: not run because deployment is not authorized.
 - Public-deployment WebMCP test: not run; local ChatGPT in-app browser test passed.
 - YouTube upload and Devpost submission: not run because publication is not authorized.
-- Legal media clearance: not passed. `NOTICE.md` inventories all 1,318 media files, but written publication rights/chain of title were not found beside the assets. Rights-holder approval or replacement with cleared media is required before anything public.
+- Legal media clearance: passed by owner declaration on 2026-08-29 for this public challenge repository, separate Netlify deployment, demo video, and Devpost submission. Dream Realm media remains proprietary and outside the MIT license.
