@@ -496,7 +496,8 @@ function drawPerformanceFrame(frameIndex, context, canvas, snapshot = performanc
 	context.clearRect(0, 0, width, height);
 	drawCover(context, snapshot.backgroundImage, width, height);
 
-	const naya = snapshot.frames[frameIndex % snapshot.frames.length];
+	const normalizedFrameIndex = ((Math.trunc(frameIndex) % snapshot.frames.length) + snapshot.frames.length) % snapshot.frames.length;
+	const naya = snapshot.frames[normalizedFrameIndex];
 	const nayaHeight = height * 0.91;
 	const nayaWidth = naya.width * nayaHeight / naya.height;
 	context.save();
@@ -695,7 +696,8 @@ function startTowerLoop() {
 	const snapshot = performanceSnapshot();
 	const startedAt = performance.now();
 	function tick(now) {
-		const frame = Math.floor(((now - startedAt) / 1000 * PERFORMANCE_FPS) % PERFORMANCE_FRAMES);
+		const elapsed = Math.max(0, now - startedAt);
+		const frame = Math.floor((elapsed / 1000 * PERFORMANCE_FPS) % PERFORMANCE_FRAMES);
 		drawPerformanceFrame(frame, towerContext, towerCanvas, snapshot);
 		towerLoopHandle = requestAnimationFrame(tick);
 	}
