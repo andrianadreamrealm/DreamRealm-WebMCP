@@ -53,6 +53,8 @@ const creator = {
 	backgroundImage: null,
 	playing: false,
 	animationHandle: 0,
+	playbackToken: 0,
+	stopPlaybackAudio: null,
 	videoBlob: null,
 	videoUrl: null,
 	exportFileName: ""
@@ -466,8 +468,9 @@ async function buildPerformance() {
 		document.querySelector("#performance-loading").textContent = `Loading selected performance frames… ${loaded}/${PERFORMANCE_FRAMES}`;
 	}));
 	document.querySelector("#performance-loading").classList.add("ready");
-	drawPerformanceFrame(0, performanceContext, performanceCanvas);
-	playPerformance();
+	const snapshot = performanceSnapshot();
+	drawPerformanceFrame(0, performanceContext, performanceCanvas, snapshot);
+	playPerformance(null, snapshot);
 	track("performance_viewed", creator.resultCategory, { outcome_key: creator.outcomeKey });
 }
 
@@ -478,14 +481,22 @@ function drawCover(context, image, width, height) {
 	context.drawImage(image, (width - drawWidth) / 2, (height - drawHeight) / 2, drawWidth, drawHeight);
 }
 
-function drawPerformanceFrame(frameIndex, context, canvas) {
+function performanceSnapshot() {
+	const frames = creator.frames.slice();
+	if (!creator.backgroundImage || frames.length !== PERFORMANCE_FRAMES || frames.some(frame => !frame)) {
+		throw new Error("The selected performance is not fully loaded yet.");
+	}
+	return { backgroundImage: creator.backgroundImage, frames };
+}
+
+function drawPerformanceFrame(frameIndex, context, canvas, snapshot = performanceSnapshot()) {
 	const width = canvas.width;
 	const height = canvas.height;
 	context.setTransform(1, 0, 0, 1, 0, 0);
 	context.clearRect(0, 0, width, height);
-	drawCover(context, creator.backgroundImage, width, height);
+	drawCover(context, snapshot.backgroundImage, width, height);
 
-	const naya = creator.frames[frameIndex % creator.frames.length];
+	const naya = snapshot.frames[frameIndex % snapshot.frames.length];
 	const nayaHeight = height * 0.91;
 	const nayaWidth = naya.width * nayaHeight / naya.height;
 	context.save();
@@ -551,20 +562,28 @@ function drawOutcomeEffect(context, width, height, frameIndex) {
 	context.restore();
 }
 
-function playPerformance(onComplete = null) {
+function playPerformance(onComplete = null, snapshotOverride = null) {
+	creator.playbackToken += 1;
+	const playbackToken = creator.playbackToken;
 	cancelAnimationFrame(creator.animationHandle);
+	creator.stopPlaybackAudio?.();
+	creator.stopPlaybackAudio = null;
+	const snapshot = snapshotOverride || performanceSnapshot();
 	creator.playing = true;
 	const startedAt = performance.now();
 	const stopBeat = audioEnabled ? startBeat() : () => {};
+	creator.stopPlaybackAudio = stopBeat;
 	function tick(now) {
+		if (playbackToken !== creator.playbackToken) return;
 		const elapsed = now - startedAt;
 		const frame = Math.min(PERFORMANCE_FRAMES - 1, Math.floor(elapsed / 1000 * PERFORMANCE_FPS));
-		drawPerformanceFrame(frame, performanceContext, performanceCanvas);
+		drawPerformanceFrame(frame, performanceContext, performanceCanvas, snapshot);
 		if (elapsed < PERFORMANCE_DURATION_MS) {
 			creator.animationHandle = requestAnimationFrame(tick);
 		} else {
 			creator.playing = false;
 			stopBeat();
+			if (creator.stopPlaybackAudio === stopBeat) creator.stopPlaybackAudio = null;
 			onComplete?.();
 		}
 	}
@@ -587,6 +606,7 @@ async function recordPerformance() {
 		return;
 	}
 
+	const snapshot = performanceSnapshot();
 	ensureAudio();
 	document.querySelector("#record-video").disabled = true;
 	document.querySelector("#download-video").hidden = true;
@@ -637,7 +657,7 @@ async function recordPerformance() {
 	playPerformance(() => {
 		stopBeat();
 		recorder.stop();
-	});
+	}, snapshot);
 }
 
 function downloadVideo() {
@@ -672,10 +692,11 @@ function sendToTower() {
 
 function startTowerLoop() {
 	cancelAnimationFrame(towerLoopHandle);
+	const snapshot = performanceSnapshot();
 	const startedAt = performance.now();
 	function tick(now) {
 		const frame = Math.floor(((now - startedAt) / 1000 * PERFORMANCE_FPS) % PERFORMANCE_FRAMES);
-		drawPerformanceFrame(frame, towerContext, towerCanvas);
+		drawPerformanceFrame(frame, towerContext, towerCanvas, snapshot);
 		towerLoopHandle = requestAnimationFrame(tick);
 	}
 	towerLoopHandle = requestAnimationFrame(tick);
