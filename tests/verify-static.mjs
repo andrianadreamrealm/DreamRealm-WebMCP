@@ -24,6 +24,17 @@ assert.match(appSource, /window\.DreamRealmChallenge\s*=\s*DreamRealmChallenge/)
 assert.match(webmcpSource, /document\.modelContext\?\.registerTool/);
 assert.doesNotMatch(webmcpSource, /\.click\s*\(/, "WebMCP must not simulate UI clicks");
 
+for (const errorCode of [
+	"INVALID_STATE",
+	"HUB_NOT_READY",
+	"INVALID_INPUT",
+	"INPUT_NOT_READY",
+	"LOCKED_CHOICE",
+	"VIDEO_NOT_READY"
+]) {
+	assert.ok(appSource.includes(`"${errorCode}"`), `${errorCode} guard is required`);
+}
+
 for (const tool of expectedTools) {
 	const matches = webmcpSource.match(new RegExp(`name: ["']${tool}["']`, "g")) || [];
 	assert.equal(matches.length, 1, `${tool} should be registered exactly once`);
