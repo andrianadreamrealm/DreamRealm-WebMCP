@@ -10,9 +10,9 @@ Target: 2:45–2:50, English narration. Speak naturally at approximately 135–1
 
 Dream Realm is an AI-native playable creator world where humans and AI agents participate together in gameplay and creation. This WebMCP Challenge demo shows one complete shared Dance loop: live game-state tools, Signal Sync, Noiz repair, Murk's doubt, creator choices, an accurate human-controlled WebM video export, Trending Tower response, and return to the changed HUB.
 
-Repository: `[PUBLIC_GITHUB_URL]`
+Repository: <https://github.com/andrianadreamrealm/DreamRealm-WebMCP>
 
-Live demo: `[PUBLIC_NETLIFY_URL]`
+Live demo: <https://spectacular-madeleine-6256db.netlify.app/>
 
 Built for the OpenAI WebMCP Challenge.
 
