@@ -12,11 +12,11 @@ An AI-native playable creator world where humans and AI agents participate toget
 
 ## Live app URL
 
-`[PUBLIC_NETLIFY_URL]`
+<https://spectacular-madeleine-6256db.netlify.app/>
 
 ## Public repository URL
 
-`[PUBLIC_GITHUB_URL]`
+<https://github.com/andrianadreamrealm/DreamRealm-WebMCP>
 
 ## Demo video URL
 
