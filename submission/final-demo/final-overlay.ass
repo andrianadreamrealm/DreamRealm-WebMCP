@@ -1,0 +1,51 @@
+[Script Info]
+Title: Dream Realm WebMCP final captions and verified tool activity
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Arial,34,&H00FFFFFF,&H000000FF,&H00100822,&H99000000,-1,0,0,0,100,100,0,0,3,2,0,2,55,490,36,1
+Style: PanelTitle,Arial,25,&H00F5CCFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,1,0,1,0,0,7,0,0,0,1
+Style: Tool,Consolas,24,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: ToolAccent,Consolas,22,&H00A4F5FF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: Footer,Arial,18,&H00C8BDD8,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:02:11.00,PanelTitle,,0,0,0,,{\pos(1530,55)}LIVE WEBMCP TOOL ACTIVITY
+Dialogue: 0,0:00:00.00,0:02:11.00,Footer,,0,0,0,,{\pos(1530,1010)}Public deployment · Same live state · No fake clicks
+
+Dialogue: 0,0:00:00.00,0:00:11.00,ToolAccent,,0,0,0,,{\pos(1530,125)}DISCOVERY
+Dialogue: 0,0:00:00.00,0:00:11.00,Tool,,0,0,0,,{\pos(1530,175)}document.modelContext\N.registerTool() × 8\N\N✓ Deployed page tools
+Dialogue: 0,0:00:11.00,0:00:23.50,ToolAccent,,0,0,0,,{\pos(1530,125)}READ-ONLY TOOL
+Dialogue: 0,0:00:11.00,0:00:23.50,Tool,,0,0,0,,{\pos(1530,175)}get_dream_realm_state()\N\Nscreen: hub\Nvalid next: start route\N\N✓ No mutation
+Dialogue: 0,0:00:23.50,0:00:36.00,ToolAccent,,0,0,0,,{\pos(1530,125)}VALIDATED ACTION
+Dialogue: 0,0:00:23.50,0:00:36.00,Tool,,0,0,0,,{\pos(1530,175)}start_dream_realm_route({\N  route: gateway\N})\N\N→ screen-mission
+Dialogue: 0,0:00:36.00,0:00:51.00,ToolAccent,,0,0,0,,{\pos(1530,125)}SIGNAL SYNC
+Dialogue: 0,0:00:36.00,0:00:51.00,Tool,,0,0,0,,{\pos(1530,175)}submit_dance_signal()\N\Nclean: 1 · 3 · 2\Nrepair: 1 · 3 · 2 · 4\N\Nscore: 100
+Dialogue: 0,0:00:51.00,0:01:02.00,ToolAccent,,0,0,0,,{\pos(1530,125)}MURK DECISION
+Dialogue: 0,0:00:51.00,0:01:02.00,Tool,,0,0,0,,{\pos(1530,175)}resolve_murk_doubt({\N  choice: evidence\N})\N\N→ screen-creator
+Dialogue: 0,0:01:02.00,0:01:18.00,ToolAccent,,0,0,0,,{\pos(1530,125)}CREATOR AGENT
+Dialogue: 0,0:01:02.00,0:01:18.00,Tool,,0,0,0,,{\pos(1530,175)}set_creator_choices({\N  outfit: glamour\N  background: street\N  move: power_finish\N})
+Dialogue: 0,0:01:18.00,0:01:36.00,ToolAccent,,0,0,0,,{\pos(1530,125)}PERFORMANCE
+Dialogue: 0,0:01:18.00,0:01:36.00,Tool,,0,0,0,,{\pos(1530,175)}prepare_performance()\N\N✓ 145 authentic frames\N✓ Matching choices\N\NHUMAN CONTROL\NMediaRecorder export
+Dialogue: 0,0:01:36.00,0:01:52.00,ToolAccent,,0,0,0,,{\pos(1530,125)}CONSENT BOUNDARY
+Dialogue: 0,0:01:36.00,0:01:52.00,Tool,,0,0,0,,{\pos(1530,175)}videoReady: true\Nfile: WebM\N\NThe human explicitly\Nrecords and downloads.
+Dialogue: 0,0:01:52.00,0:02:03.00,ToolAccent,,0,0,0,,{\pos(1530,125)}WORLD RESPONSE
+Dialogue: 0,0:01:52.00,0:02:03.00,Tool,,0,0,0,,{\pos(1530,175)}send_output_to_tower()\N\Nstatus: SIGNAL RANKED\Nunlock: restored-pulse
+Dialogue: 0,0:02:03.00,0:02:11.00,ToolAccent,,0,0,0,,{\pos(1530,125)}PERSISTENT RESULT
+Dialogue: 0,0:02:03.00,0:02:11.00,Tool,,0,0,0,,{\pos(1530,175)}return_to_hub()\N\NtowerActive: true\Nconsole errors: 0\N\NLive: Netlify\NCode: GitHub
+
+Dialogue: 1,0:00:00.50,0:00:09.64,Caption,,0,0,0,,Dream Realm is an AI-native playable creator world where people enter missions,\Nmake creative choices, and publish results back into the world.
+Dialogue: 1,0:00:11.00,0:00:23.24,Caption,,0,0,0,,Dream Realm, Naya, the Hub, and this playable creator foundation existed before the challenge.\NThe challenge work is the WebMCP extension layered onto that existing experience.
+Dialogue: 1,0:00:23.50,0:00:35.50,Caption,,0,0,0,,The deployed page registers eight structured WebMCP tools. The agent reads the same live state\Nas the player, validates every transition, and never fakes interface clicks.
+Dialogue: 1,0:00:36.00,0:00:48.12,Caption,,0,0,0,,Here the agent starts the Dance Gateway mission and restores Signal Sync. Noiz corrupts the pattern;\Nstructured signal actions repair it while the visible score and mission react immediately.
+Dialogue: 1,0:00:51.00,0:00:59.83,Caption,,0,0,0,,Murk introduces doubt. The agent chooses the evidence earned in gameplay,\Nadvancing the same shared state into Creator Tools.
+Dialogue: 1,0:01:02.00,0:01:13.33,Caption,,0,0,0,,Now the agent sets Naya's outfit, background, movement, and outcome effect.\NThese choices prepare the exact 145-frame performance visible on screen.
+Dialogue: 1,0:01:18.00,0:01:30.22,Caption,,0,0,0,,Naya performs the selected Glamour look, Street scene, and Power Finish. The human keeps the\Nmeaningful consent boundary: video recording and download remain an explicit human action.
+Dialogue: 1,0:01:36.00,0:01:46.34,Caption,,0,0,0,,Only after the real WebM export is ready can the agent send the output to Trending Tower.\NInvalid or premature actions are rejected by the live controller.
+Dialogue: 1,0:01:52.00,0:02:04.62,Caption,,0,0,0,,The Tower ranks the restored Dance signal, grants the unlock, and the agent returns to the Hub.\NThe activated Tower persists: one world, one live state, shared by human and agent.

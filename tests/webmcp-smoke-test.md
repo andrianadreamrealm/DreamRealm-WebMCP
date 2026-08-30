@@ -1,6 +1,8 @@
 # Dream Realm WebMCP smoke-test matrix
 
-Test target: `http://127.0.0.1:4180/`
+Primary target: <https://spectacular-madeleine-6256db.netlify.app/>
+
+Local fallback: `http://127.0.0.1:4180/`
 
 Run every route from a fresh page/session where noted. Record browser, viewport, console output, and pass/fail evidence. WebMCP calls must visibly change the same page used for mouse/touch testing.
 
@@ -66,5 +68,6 @@ Run every route from a fresh page/session where noted. Record browser, viewport,
 - [ ] No API keys, tokens, passwords, cookies, private URLs, or credentials are present.
 - [ ] No `.c3p`, `.uproject`, `.uasset`, `.umap`, archive, or checkpoint is present.
 - [ ] No partner names, partner logos, private pitch material, or unrelated media is present.
-- [ ] Every included media category appears in `NOTICE.md` and remains flagged as not cleared for publication.
-- [ ] `git remote -v` is empty and no deployment command has been run.
+- [ ] Every included media category appears in `NOTICE.md` and is covered by the recorded owner clearance while remaining outside the MIT grant.
+- [ ] The public repository contains only the audited challenge folder and the live app is a separate Netlify project.
+- [ ] The live URL returns without credentials in a logged-out/private browser session.

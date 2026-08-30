@@ -1,5 +1,7 @@
 # OpenAI WebMCP Challenge compliance audit — 2026-08-29
 
+Final video and public-release status updated 2026-08-30.
+
 This audit uses the current OpenAI challenge page and Devpost Official Rules as the controlling sources:
 
 - <https://openai.com/webmcp-challenge/>
@@ -24,14 +26,14 @@ Current official deadline: **September 3, 2026 at 1:00 pm Pacific Time**. The ru
 | 9 | Working public deployment accessible to judges | **PASS** | The separate Netlify challenge site is live at <https://spectacular-madeleine-6256db.netlify.app/>. `dreamrealmvision.com` was not modified or redeployed. |
 | 10 | Successful ChatGPT in-app browser or WebMCP Chrome test | **PASS publicly** | The in-app browser discovered all eight tools, completed valid and invalid-state tests, generated real WebM files, reached Tower, returned to HUB, and finished with no new console warnings or errors. |
 | 11 | English Devpost description covers four required questions | **PASS as draft** | `submission/DEVPOST_DESCRIPTION.md` covers fit, user experience, new human-agent collaboration, and implementation using the approved positioning. Final form submission remains manual/public. |
-| 12 | Under-three-minute YouTube demo plan with audio | **PASS as plan; VIDEO NOT RECORDED** | `submission/DEMO_PLAN.md` is a 2:48 shot/narration/audio plan. Recording, rights review, public YouTube upload, and final URL remain. |
+| 12 | Under-three-minute YouTube demo with audio | **PASS locally; upload pending** | The final YouTube-ready MP4 is 2:11.00, 1920×1080, with neutral English synthetic narration, burned-in English captions, and a truthful timed panel for the eight live WebMCP actions. Privacy and audio checks pass. Only the owner-authorized public YouTube upload and URL remain. |
 
 ## Release decision
 
-**PUBLIC APP AND REPOSITORY VERIFIED.** The software, media clearance, GitHub repository, separate Netlify deployment, and public WebMCP retest are complete. Remaining gates: owner-authorized YouTube upload and the entrant's final Devpost legal confirmation/Submit.
+**PUBLIC APP, REPOSITORY, AND LOCAL FINAL VIDEO VERIFIED.** The software, media clearance, GitHub repository, separate Netlify deployment, public WebMCP retest, and final 2:11 demo render are complete. Remaining gates: owner-authorized YouTube upload and the entrant's final Devpost legal confirmation/Submit.
 
 ## Shortest compliant path after approval
 
-1. Record and rights-review the 2:48 English demo, upload it publicly to YouTube after upload authorization, and verify audio/captions.
+1. Upload the already verified 2:11 English demo to YouTube after owner authorization and add its public URL.
 2. Fill the Devpost form in English with the live URL, public repository, public YouTube URL, testing instructions, and the final description.
 3. Stop before the entrant's legal confirmation and final Submit.

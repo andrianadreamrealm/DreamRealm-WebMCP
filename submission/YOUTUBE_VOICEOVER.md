@@ -1,68 +1,47 @@
 # Final YouTube demo voiceover
 
-Target: 2:45–2:50, English narration. Speak naturally at approximately 135–145 words per minute. Preserve real app sounds underneath at low volume. Use no third-party music.
+Final runtime: **2:11.00**. Voice: neutral synthetic English, `en-US-JennyNeural`, rate −2%. No music or third-party audio is used.
 
-## Title
-
-**Dream Realm WebMCP — Humans and AI Play and Create Together**
-
-## Description
-
-Dream Realm is an AI-native playable creator world where humans and AI agents participate together in gameplay and creation. This WebMCP Challenge demo shows one complete shared Dance loop: live game-state tools, Signal Sync, Noiz repair, Murk's doubt, creator choices, an accurate human-controlled WebM video export, Trending Tower response, and return to the changed HUB.
-
-Repository: <https://github.com/andrianadreamrealm/DreamRealm-WebMCP>
-
-Live demo: <https://spectacular-madeleine-6256db.netlify.app/>
-
-Built for the OpenAI WebMCP Challenge.
+The exact synchronized script, source boundary, and timestamps are in `submission/final-demo/FINAL_VIDEO_VOICEOVER.md`. Burned-in captions and the uploadable `.srt` use the same text.
 
 ## Narration
 
-### 0:00–0:12
+### 0:00.5–0:09.64
 
-“Dream Realm is an AI-native playable creator world where humans and AI agents participate together in gameplay and creation.”
+“Dream Realm is an AI-native playable creator world where people enter missions, make creative choices, and publish results back into the world.”
 
-### 0:12–0:26
+### 0:11.0–0:23.24
 
-“It still works as a normal mouse or touch game. I activate the portal, enter the Dream Realm HUB, and choose between a Gateway Mission and direct creator access.”
+“Dream Realm, Naya, the Hub, and this playable creator foundation existed before the challenge. The challenge work is the WebMCP extension layered onto that existing experience.”
 
-### 0:26–0:43
+### 0:23.5–0:35.5
 
-“The page also exposes WebMCP Site tools. The agent reads the same live screen, route, score, choices, unlocks, and valid next actions without changing anything.”
+“The deployed page registers eight structured WebMCP tools. The agent reads the same live state as the player, validates every transition, and never fakes interface clicks.”
 
-### 0:43–1:08
+### 0:36.0–0:48.12
 
-“Now we share the Dance Gateway Mission. I can play a cue myself, while the agent submits structured signals to restore the clean pattern and repair Noiz corruption. These are real game actions, not simulated clicks.”
+“Here the agent starts the Dance Gateway mission and restores Signal Sync. Noiz corrupts the pattern; structured signal actions repair it while the visible score and mission react immediately.”
 
-### 1:08–1:25
+### 0:51.0–0:59.83
 
-“Murk creates doubt just before the creator moment. The agent trusts the evidence we earned. Invalid actions are rejected because every tool validates the current story state.”
+“Murk introduces doubt. The agent chooses the evidence earned in gameplay, advancing the same shared state into Creator Tools.”
 
-### 1:25–1:47
+### 1:02.0–1:13.33
 
-“Together we choose Naya's outfit, background, movement, and outcome effect. The agent prepares the exact live performance, and every change is immediately visible on the same page.”
+“Now the agent sets Naya's outfit, background, movement, and outcome effect. These choices prepare the exact 145-frame performance visible on screen.”
 
-### 1:47–2:08
+### 1:18.0–1:30.22
 
-“Recording remains intentionally human-controlled. I generate the final WebM video, which accurately contains the selected outfit, scene, movement, and mission result, and then I can download it.”
+“Naya performs the selected Glamour look, Street scene, and Power Finish. The human keeps the meaningful consent boundary: video recording and download remain an explicit human action.”
 
-### 2:08–2:25
+### 1:36.0–1:46.34
 
-“The completed output travels to Trending Tower, activates the creator signal, grants an unlock, and remains visible when we return to the HUB.”
+“Only after the real WebM export is ready can the agent send the output to Trending Tower. Invalid or premature actions are rejected by the live controller.”
 
-### 2:25–2:38
+### 1:52.0–2:04.62
 
-“Gameplay enriches creation, but never blocks it. Create Now opens the same creator and export engine without requiring a mission first.”
+“The Tower ranks the restored Dance signal, grants the unlock, and the agent returns to the Hub. The activated Tower persists: one world, one live state, shared by human and agent.”
 
-### 2:38–2:48
+## Upload copy
 
-“Dream Realm turns WebMCP into shared play: one world, one live state, and a real human-agent creator loop.”
-
-## Final capture rules
-
-- Capture the final public deployment, not localhost.
-- Show at least one WebMCP call and its visible page response in the same shot.
-- Show one rejected invalid-state call briefly.
-- Use the real generated WebM download link and filename.
-- Keep total runtime under 2:59 and include English captions.
-- Do not show local file paths, account data, private browser tabs, or Devpost legal declarations.
+Use the title, description, visibility, and verification checklist in `submission/YOUTUBE_READY_PACKAGE.md`.

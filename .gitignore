@@ -11,6 +11,10 @@ test-results/
 *.webm
 *.mp4
 DreamRealm-events-*.json
+submission/final-demo/review-*/
+submission/final-demo/review-*.jpg
+submission/final-demo/narration/*.mp3
+submission/final-demo/narration/*.wav
 
 # Never include private source projects or archives
 *.c3p

@@ -58,7 +58,9 @@ No credentials are required. The app must remain free and publicly reachable thr
 
 ## Provenance disclosure
 
-The browser gameplay/creator slice predates the challenge. During the challenge it was meaningfully extended with a shared `DreamRealmChallenge` controller, eight WebMCP tools, validated state transitions, structured results, feature detection, tests, provenance records, and a minimal public repository. See `BASELINE.md` and dated Git history.
+**PRE-EXISTING:** Dream Realm IP, Naya, HUB, creator/game concept, original browser-playable foundation, missions, creator selections, Naya rendering, human video export, Tower response, unlock, and HUB return.
+
+**BUILT / MEANINGFULLY EXTENDED DURING THE WEBMCP CHALLENGE:** the shared `DreamRealmChallenge` controller, eight WebMCP tools, structured agent actions, schemas and validated state transitions, Gateway/Creator/Naya-performance/Tower/HUB agent flow, preservation of the human-controlled recording boundary, public challenge deployment, tests, debugging, challenge-specific polish, and provenance/licensing documentation. See `BASELINE.md` and the dated commit history.
 
 ## Final manual checks before Submit
 

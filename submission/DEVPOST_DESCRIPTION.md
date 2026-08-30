@@ -10,6 +10,8 @@ Most agent integrations sit beside an experience: they explain a game, fill a fo
 
 The broader Dream Realm concept includes Dance, Music, and Fashion creator rooms. This challenge submission deliberately focuses on one reliable end-to-end Dance loop so judges can experience the complete human-agent relationship rather than a wide but fragile demo.
 
+Dream Realm itself is pre-existing work. Its IP, Naya, HUB, creator-world concept, playable browser foundation, original missions, performance renderer, human video export, Tower response, and return flow were not created during this challenge. The challenge work is the meaningful WebMCP extension that lets an agent participate in that existing live world through structured, validated actions.
+
 ## Why Dream Realm is a strong WebMCP use case
 
 Dream Realm combines real-time game state, sequential mission rules, creative choices, visible consequences, and a human-controlled media export. Those are difficult for a general agent to operate reliably by guessing at buttons or interpreting screenshots. WebMCP gives the live site a small, explicit vocabulary for collaboration: read the current state, start a route, restore a Dance signal, resolve Murk's doubt, compose Naya's performance, prepare the output, update Trending Tower, and return to the HUB.
@@ -54,7 +56,11 @@ The final Naya performance is rendered from the selected outfit, background, mov
 
 ## Pre-existing versus challenge-added
 
-The private-access entrance, HUB, Gateway/Creator routes, Dance gameplay, Murk/Noiz logic, creator selections, performance rendering, MediaRecorder export, Tower response, unlock, and HUB return predate the challenge. The challenge-added work is the shared controller, WebMCP tools, validation, tests, provenance documentation, and minimal distributable challenge repository. `BASELINE.md` records source timestamps, checksums, and dated Git history.
+**PRE-EXISTING:** Dream Realm IP and visual identity; Naya and the other original characters; the Option C HUB; the playable creator/game concept; private-access entrance; Gateway and Direct Creator routes; Dance gameplay; Murk/Noiz logic; creator selections; Naya performance rendering; human MediaRecorder export; Tower response; unlock; HUB return; and the original mouse/touch/keyboard browser foundation.
+
+**BUILT / MEANINGFULLY EXTENDED DURING THE WEBMCP CHALLENGE:** the shared `DreamRealmChallenge` controller over the existing state; eight `document.modelContext.registerTool()` registrations; JSON schemas; structured agent actions; read-only and mutating-tool boundaries; input and transition validation; explicit error codes; agent participation across Gateway, Creator, Naya performance preparation, Tower, and HUB; preservation of the human recording/download boundary; the minimal public challenge build and deployment; public WebMCP testing; debugging and challenge-specific stability fixes; and provenance/licensing/test documentation.
+
+Where existing Dream Realm code was changed, those changes were made only to expose and stabilize the shared controller and WebMCP flow; they do not represent the underlying Dream Realm product as newly created. `BASELINE.md` records pre-August-25 source timestamps and checksums, while the dated Git history begins with the untouched baseline and then separates controller, tools, tests, fixes, and release documentation.
 
 ## Built with
 

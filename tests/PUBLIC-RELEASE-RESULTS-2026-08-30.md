@@ -20,6 +20,6 @@ The Netlify project is a separate challenge deployment. `dreamrealmvision.com` a
 
 ## Remaining manual gates
 
-- Record and upload the public under-three-minute YouTube demo with audio after owner authorization.
+- The final 2:11.00 YouTube-ready MP4 has been rendered from the authentic public run with neutral English TTS narration, burned-in captions, and a truthful timed WebMCP activity panel. Upload it publicly after owner authorization.
 - Add the YouTube URL to the prepared Devpost fields.
 - Entrant reviews legal declarations and personally clicks final Devpost Submit.

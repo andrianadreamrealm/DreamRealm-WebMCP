@@ -1,0 +1,44 @@
+1
+00:00:00,500 --> 00:00:09,640
+Dream Realm is an AI-native playable creator world where people enter missions,
+make creative choices, and publish results back into the world.
+
+2
+00:00:11,000 --> 00:00:23,240
+Dream Realm, Naya, the Hub, and this playable creator foundation existed before the challenge.
+The challenge work is the WebMCP extension layered onto that existing experience.
+
+3
+00:00:23,500 --> 00:00:35,500
+The deployed page registers eight structured WebMCP tools. The agent reads the same live state
+as the player, validates every transition, and never fakes interface clicks.
+
+4
+00:00:36,000 --> 00:00:48,120
+Here the agent starts the Dance Gateway mission and restores Signal Sync. Noiz corrupts the pattern;
+structured signal actions repair it while the visible score and mission react immediately.
+
+5
+00:00:51,000 --> 00:00:59,830
+Murk introduces doubt. The agent chooses the evidence earned in gameplay,
+advancing the same shared state into Creator Tools.
+
+6
+00:01:02,000 --> 00:01:13,330
+Now the agent sets Naya's outfit, background, movement, and outcome effect.
+These choices prepare the exact 145-frame performance visible on screen.
+
+7
+00:01:18,000 --> 00:01:30,220
+Naya performs the selected Glamour look, Street scene, and Power Finish. The human keeps the
+meaningful consent boundary: video recording and download remain an explicit human action.
+
+8
+00:01:36,000 --> 00:01:46,340
+Only after the real WebM export is ready can the agent send the output to Trending Tower.
+Invalid or premature actions are rejected by the live controller.
+
+9
+00:01:52,000 --> 00:02:04,620
+The Tower ranks the restored Dance signal, grants the unlock, and the agent returns to the Hub.
+The activated Tower persists: one world, one live state, shared by human and agent.
