@@ -4,7 +4,9 @@ A local, browser-first Dream Realm vertical slice extended with WebMCP Site tool
 
 **Dream Realm is an AI-native playable creator world where humans and AI agents can participate together in gameplay and creation.**
 
-This repository is local-only at this stage. It has not been deployed, pushed, or made public.
+Public challenge repository: <https://github.com/andrianadreamrealm/DreamRealm-WebMCP>
+
+Live challenge build: <https://spectacular-madeleine-6256db.netlify.app/>
 
 ## Provenance
 
@@ -65,15 +67,15 @@ The test matrix is in [tests/webmcp-smoke-test.md](tests/webmcp-smoke-test.md). 
 node tests/verify-static.mjs
 ```
 
-The latest completed local run is recorded in [tests/TEST-RESULTS-2026-08-29.md](tests/TEST-RESULTS-2026-08-29.md). Draft submission copy and the timed demo plan are in [submission/DEVPOST_DESCRIPTION.md](submission/DEVPOST_DESCRIPTION.md) and [submission/DEMO_PLAN.md](submission/DEMO_PLAN.md).
+The latest completed local run is recorded in [tests/TEST-RESULTS-2026-08-29.md](tests/TEST-RESULTS-2026-08-29.md). Public release verification is recorded in [tests/PUBLIC-RELEASE-RESULTS-2026-08-30.md](tests/PUBLIC-RELEASE-RESULTS-2026-08-30.md). Draft submission copy and the timed demo plan are in [submission/DEVPOST_DESCRIPTION.md](submission/DEVPOST_DESCRIPTION.md) and [submission/DEMO_PLAN.md](submission/DEMO_PLAN.md).
 
 ## Deployment boundary
 
-`netlify.toml` is configuration only. No Netlify production site or remote repository is connected by this project.
+The challenge is published as a separate Netlify Drop project at <https://spectacular-madeleine-6256db.netlify.app/>. It is not connected to, and did not modify or redeploy, `dreamrealmvision.com`.
 
 The rights holder cleared every inventoried media category for this challenge release on 2026-08-29. See [NOTICE.md](NOTICE.md). Dream Realm characters, brand, visual identity, and media remain proprietary and are excluded from the MIT software license.
 
-The official submission also requires a public repository, a publicly reachable live URL, and a public YouTube demo. None has been created yet; those are intentional release gates requiring explicit approval.
+The public repository and live challenge URL are complete. The remaining external release gate is the owner-authorized public YouTube demo, followed by the entrant's own Devpost legal confirmation and final Submit.
 
 ## Licensing
 
