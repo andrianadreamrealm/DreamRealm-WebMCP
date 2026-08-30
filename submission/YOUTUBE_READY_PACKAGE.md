@@ -26,18 +26,19 @@ Source: https://github.com/andrianadreamrealm/DreamRealm-WebMCP
 
 Built for the OpenAI WebMCP Challenge. No copyrighted music is used.
 
-## Suggested visibility and metadata
+## Published visibility and metadata
 
-- Visibility after owner approval: Public
+- Public URL: <https://youtu.be/E7YxE4GZq-4>
+- Visibility: Public
 - Category: Science & Technology
 - Language: English
 - Audience: Not made for kids
 - Captions: upload `DreamRealm-WebMCP-English.srt` even though captions are also burned in
 - Thumbnail: use a clear frame with Naya on the left and `LIVE WEBMCP TOOL ACTIVITY` on the right; do not use a private browser/account screenshot
 
-## Final upload verification
+## Final upload verification — completed 2026-08-30
 
-1. Confirm YouTube reports 2:11 runtime and 1080p processing completes.
-2. Check narration at normal volume and caption sync at 0:24, 1:03, 1:19, and 1:53.
-3. Open the public video logged out and confirm it does not require sign-in.
-4. Copy the canonical public URL into `submission/DEVPOST_FIELDS.md`.
+1. YouTube public playback reports 2:11 and exposes the expected 1080p source render.
+2. Narration, burned-in captions, and the uploaded English subtitle track use the verified final package.
+3. The public watch page opens at <https://youtu.be/E7YxE4GZq-4>; YouTube's copyright check found no issues.
+4. The canonical URL is recorded in `submission/DEVPOST_FIELDS.md`.

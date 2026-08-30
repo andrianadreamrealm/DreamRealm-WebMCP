@@ -37,4 +37,4 @@ The live validation also rejected a premature/invalid-state action. Pattern call
 - Verification and hashes: `submission/final-demo/FINAL_VIDEO_REPORT.md`
 - YouTube copy: `submission/YOUTUBE_READY_PACKAGE.md`
 
-Do not rerun or reconstruct this footage. Public YouTube upload requires owner authorization.
+Do not rerun or reconstruct this footage. The owner-authorized final demo is public at <https://youtu.be/E7YxE4GZq-4>.

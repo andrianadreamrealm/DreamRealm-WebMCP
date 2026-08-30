@@ -34,10 +34,8 @@ An overlapping performance preview/recording animation could let an old animatio
 
 Both guards are present in the shared controller and covered by the documented manual matrix. The in-app browser's tool review latency is longer than the accelerated local animation window, so those two transient states were not forced with a live tool call in this run.
 
-## Intentionally not run / release blockers
+## Subsequent release status
 
-- Public repository check: not run because publishing is not authorized.
-- Public deployment and remote judge access: not run because deployment is not authorized.
-- Public-deployment WebMCP test: not run; local ChatGPT in-app browser test passed.
-- YouTube upload and Devpost submission: not run because publication is not authorized.
-- Legal media clearance: passed by owner declaration on 2026-08-29 for this public challenge repository, separate Netlify deployment, demo video, and Devpost submission. Dream Realm media remains proprietary and outside the MIT license.
+The gates that were intentionally closed during this 2026-08-29 local run were completed on 2026-08-30 and are recorded in `tests/PUBLIC-RELEASE-RESULTS-2026-08-30.md`: public GitHub repository, separate Netlify deployment, public in-app WebMCP test, and public YouTube demo. Final Devpost legal declarations and Submit remain with the entrant.
+
+Legal media clearance passed by owner declaration on 2026-08-29 for the public challenge repository, separate Netlify deployment, demo video, and Devpost submission. Dream Realm media remains proprietary and outside the MIT license.

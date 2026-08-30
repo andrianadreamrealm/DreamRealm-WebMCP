@@ -26,14 +26,14 @@ Current official deadline: **September 3, 2026 at 1:00 pm Pacific Time**. The ru
 | 9 | Working public deployment accessible to judges | **PASS** | The separate Netlify challenge site is live at <https://spectacular-madeleine-6256db.netlify.app/>. `dreamrealmvision.com` was not modified or redeployed. |
 | 10 | Successful ChatGPT in-app browser or WebMCP Chrome test | **PASS publicly** | The in-app browser discovered all eight tools, completed valid and invalid-state tests, generated real WebM files, reached Tower, returned to HUB, and finished with no new console warnings or errors. |
 | 11 | English Devpost description covers four required questions | **PASS as draft** | `submission/DEVPOST_DESCRIPTION.md` covers fit, user experience, new human-agent collaboration, and implementation using the approved positioning. Final form submission remains manual/public. |
-| 12 | Under-three-minute YouTube demo with audio | **PASS locally; upload pending** | The final YouTube-ready MP4 is 2:11.00, 1920×1080, with neutral English synthetic narration, burned-in English captions, and a truthful timed panel for the eight live WebMCP actions. Privacy and audio checks pass. Only the owner-authorized public YouTube upload and URL remain. |
+| 12 | Under-three-minute YouTube demo with audio | **PASS publicly** | The 2:11.00, 1920×1080 public demo at <https://youtu.be/E7YxE4GZq-4> has neutral English synthetic narration, burned-in English captions, an uploaded subtitle track, and a truthful timed panel for the eight live WebMCP actions. YouTube's copyright check found no issues. |
 
 ## Release decision
 
-**PUBLIC APP, REPOSITORY, AND LOCAL FINAL VIDEO VERIFIED.** The software, media clearance, GitHub repository, separate Netlify deployment, public WebMCP retest, and final 2:11 demo render are complete. Remaining gates: owner-authorized YouTube upload and the entrant's final Devpost legal confirmation/Submit.
+**PUBLIC APP, REPOSITORY, AND FINAL VIDEO VERIFIED.** The software, media clearance, GitHub repository, separate Netlify deployment, public WebMCP retest, and public 2:11 demo are complete. The only remaining gate is the entrant's final Devpost legal confirmation/Submit.
 
-## Shortest compliant path after approval
+## Shortest compliant path to submission
 
-1. Upload the already verified 2:11 English demo to YouTube after owner authorization and add its public URL.
-2. Fill the Devpost form in English with the live URL, public repository, public YouTube URL, testing instructions, and the final description.
-3. Stop before the entrant's legal confirmation and final Submit.
+1. Fill the Devpost form in English with the prepared live URL, public repository, public YouTube URL, testing instructions, and final description.
+2. The entrant reviews and accepts the legal declarations.
+3. The entrant personally clicks final Submit.

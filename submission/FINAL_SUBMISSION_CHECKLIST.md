@@ -12,7 +12,7 @@ Official deadline: **September 3, 2026 at 1:00 pm Pacific Time**.
 - [x] Live Netlify URL opens without credentials in a fresh logged-out/private session.
 - [x] Final public WebMCP run passes after the anonymous-access check.
 - [x] Final local demo is 2:11.00, 1080p, narrated, captioned, privacy-reviewed, and YouTube-ready.
-- [ ] Public YouTube demo is below 3:00, has audio, and shows real WebMCP cause-and-effect.
+- [x] Public YouTube demo is below 3:00, has audio, and shows real WebMCP cause-and-effect: <https://youtu.be/E7YxE4GZq-4>.
 
 ## Devpost fields
 
@@ -21,7 +21,7 @@ Official deadline: **September 3, 2026 at 1:00 pm Pacific Time**.
 - [x] Live URL prepared.
 - [x] Public repository URL prepared.
 - [x] Judge testing instructions prepared.
-- [ ] Public YouTube URL added after upload.
+- [x] Public YouTube URL added: <https://youtu.be/E7YxE4GZq-4>.
 - [ ] Entrant/team/organization information reviewed by the entrant.
 - [ ] Every legal declaration reviewed and accepted by the entrant.
 - [ ] Final Submit clicked by the entrant before the deadline.

@@ -32,4 +32,4 @@ Final runtime: **2:11.00**. The authentic public-run visual source was trimmed o
 - QA and hashes: `submission/final-demo/FINAL_VIDEO_REPORT.md`
 - YouTube metadata: `submission/YOUTUBE_READY_PACKAGE.md`
 
-Public upload requires owner authorization. The entrant must personally review Devpost legal declarations and click final Submit.
+The owner-authorized public upload is complete at <https://youtu.be/E7YxE4GZq-4>. The entrant must personally review Devpost legal declarations and click final Submit.

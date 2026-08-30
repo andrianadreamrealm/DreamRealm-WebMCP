@@ -62,6 +62,6 @@ Full-sequence sampling plus full-resolution checks at mission/creator/performanc
 - live and repository URLs are the public challenge URLs;
 - a Windows activation watermark and Netlify deployment badge are visible in the authentic capture; neither exposes sensitive data or changes the demonstrated behavior.
 
-## Release gate
+## Public release
 
-The file is ready for an owner-authorized public YouTube upload. After upload, add the public YouTube URL to `submission/DEVPOST_FIELDS.md`, verify playback/captions in a logged-out session, then leave final Devpost legal declarations and Submit to the entrant.
+The owner-authorized video was published on 2026-08-30 at <https://youtu.be/E7YxE4GZq-4>. YouTube reports a 2:11 public runtime, the expected title and Dream Realm channel, an AI-use disclosure, and no copyright issues. The prepared English SRT was uploaded in addition to the burned-in captions. Final Devpost legal declarations and Submit remain with the entrant.

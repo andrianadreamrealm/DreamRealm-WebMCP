@@ -95,7 +95,7 @@ The challenge is published as a separate Netlify Drop project at <https://specta
 
 The rights holder cleared every inventoried media category for this challenge release on 2026-08-29. See [NOTICE.md](NOTICE.md). Dream Realm characters, brand, visual identity, and media remain proprietary and are excluded from the MIT software license.
 
-The public repository and live challenge URL are complete. The final 2:11 narrated demo package is prepared locally and documented in [submission/final-demo/FINAL_VIDEO_REPORT.md](submission/final-demo/FINAL_VIDEO_REPORT.md). The remaining external release gate is the owner-authorized YouTube upload, followed by the entrant's own Devpost legal confirmation and final Submit.
+The public repository, live challenge URL, and final 2:11 narrated demo are complete. Watch the public challenge demo at <https://youtu.be/E7YxE4GZq-4>; its render and privacy verification are documented in [submission/final-demo/FINAL_VIDEO_REPORT.md](submission/final-demo/FINAL_VIDEO_REPORT.md). The only remaining external gate is the entrant's own Devpost legal confirmation and final Submit.
 
 ## Licensing
 

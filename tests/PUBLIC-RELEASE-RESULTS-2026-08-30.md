@@ -4,6 +4,7 @@
 
 - Repository: <https://github.com/andrianadreamrealm/DreamRealm-WebMCP>
 - Live challenge build: <https://spectacular-madeleine-6256db.netlify.app/>
+- Public challenge demo: <https://youtu.be/E7YxE4GZq-4>
 - Application build: `creator-slice-0.2.0`
 - WebMCP extension: `webmcp-challenge-0.1.0`
 
@@ -18,8 +19,11 @@ The Netlify project is a separate challenge deployment. `dreamrealmvision.com` a
 - Post-deploy Tower timing fix passed with a clean cache-bust run and zero new console warnings or errors.
 - Final state: `screen-hub`, Tower active, creator output retained, and `start_dream_realm_route` available.
 
-## Remaining manual gates
+## Final video verification
 
-- The final 2:11.00 YouTube-ready MP4 has been rendered from the authentic public run with neutral English TTS narration, burned-in captions, and a truthful timed WebMCP activity panel. Upload it publicly after owner authorization.
-- Add the YouTube URL to the prepared Devpost fields.
+- The owner-authorized 2:11.00 demo is public at <https://youtu.be/E7YxE4GZq-4> with neutral English TTS narration, burned-in captions, an uploaded English subtitle track, and a truthful timed WebMCP activity panel.
+- YouTube's copyright check completed with no issues. The public watch page exposes the expected title, duration, AI-use disclosure, and Dream Realm channel identity.
+
+## Remaining manual gate
+
 - Entrant reviews legal declarations and personally clicks final Devpost Submit.

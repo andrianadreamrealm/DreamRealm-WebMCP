@@ -20,7 +20,7 @@ An AI-native playable creator world where humans and AI agents participate toget
 
 ## Demo video URL
 
-`[PUBLIC_YOUTUBE_URL — add only after owner-authorized upload]`
+<https://youtu.be/E7YxE4GZq-4>
 
 ## Built with
 
