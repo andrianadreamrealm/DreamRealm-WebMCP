@@ -75,7 +75,7 @@ The test matrix is in [tests/webmcp-smoke-test.md](tests/webmcp-smoke-test.md). 
 node tests/verify-static.mjs
 ```
 
-The latest completed local run is recorded in [tests/TEST-RESULTS-2026-08-29.md](tests/TEST-RESULTS-2026-08-29.md). Public release verification is recorded in [tests/PUBLIC-RELEASE-RESULTS-2026-08-30.md](tests/PUBLIC-RELEASE-RESULTS-2026-08-30.md). Draft submission copy and the timed demo plan are in [submission/DEVPOST_DESCRIPTION.md](submission/DEVPOST_DESCRIPTION.md) and [submission/DEMO_PLAN.md](submission/DEMO_PLAN.md).
+The latest completed local run is recorded in [tests/TEST-RESULTS-2026-08-29.md](tests/TEST-RESULTS-2026-08-29.md). Public release verification is recorded in [tests/PUBLIC-RELEASE-RESULTS-2026-08-30.md](tests/PUBLIC-RELEASE-RESULTS-2026-08-30.md). The final submitted Devpost story and timed demo plan are in [submission/DEVPOST_DESCRIPTION.md](submission/DEVPOST_DESCRIPTION.md) and [submission/DEMO_PLAN.md](submission/DEMO_PLAN.md).
 
 ### Fast judge path
 
@@ -95,7 +95,7 @@ The challenge is published as a separate Netlify Drop project at <https://specta
 
 The rights holder cleared every inventoried media category for this challenge release on 2026-08-29. See [NOTICE.md](NOTICE.md). Dream Realm characters, brand, visual identity, and media remain proprietary and are excluded from the MIT software license.
 
-The public repository, live challenge URL, and final 2:11 narrated demo are complete. Watch the public challenge demo at <https://youtu.be/E7YxE4GZq-4>; its render and privacy verification are documented in [submission/final-demo/FINAL_VIDEO_REPORT.md](submission/final-demo/FINAL_VIDEO_REPORT.md). The only remaining external gate is the entrant's own Devpost legal confirmation and final Submit.
+The public repository, live challenge URL, final 2:11 narrated demo, and Devpost submission are complete. View the submitted project at <https://devpost.com/software/dream-realm-webmcp> and watch the public challenge demo at <https://youtu.be/E7YxE4GZq-4>; its render and privacy verification are documented in [submission/final-demo/FINAL_VIDEO_REPORT.md](submission/final-demo/FINAL_VIDEO_REPORT.md).
 
 ## Licensing
 
