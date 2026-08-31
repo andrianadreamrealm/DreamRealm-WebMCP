@@ -1,4 +1,4 @@
-# Dream Realm — Devpost submission draft
+# Dream Realm WebMCP
 
 ## One-line positioning
 
@@ -61,6 +61,16 @@ The final Naya performance is rendered from the selected outfit, background, mov
 **BUILT / MEANINGFULLY EXTENDED DURING THE WEBMCP CHALLENGE:** the shared `DreamRealmChallenge` controller over the existing state; eight `document.modelContext.registerTool()` registrations; JSON schemas; structured agent actions; read-only and mutating-tool boundaries; input and transition validation; explicit error codes; agent participation across Gateway, Creator, Naya performance preparation, Tower, and HUB; preservation of the human recording/download boundary; the minimal public challenge build and deployment; public WebMCP testing; debugging and challenge-specific stability fixes; and provenance/licensing/test documentation.
 
 Where existing Dream Realm code was changed, those changes were made only to expose and stabilize the shared controller and WebMCP flow; they do not represent the underlying Dream Realm product as newly created. `BASELINE.md` records pre-August-25 source timestamps and checksums, while the dated Git history begins with the untouched baseline and then separates controller, tools, tests, fixes, and release documentation.
+
+## Broader Dream Realm context
+
+The submitted experience is intentionally one complete browser vertical slice: Gateway Mission → creator choices → Naya performance → Tower response → HUB. It demonstrates a shared human-agent world architecture, not the full scope of Dream Realm.
+
+**PRE-EXISTING DREAM REALM:** Dance, Music, and Fashion are the first creator-world spaces explored in Dream Realm. This challenge demo uses Dance as the complete WebMCP vertical slice. The broader world is designed to expand into additional interactive spaces such as puzzles, shops and commerce, sports, story missions, and social experiences. Dream Realm also has a separate Unreal Engine 5 immersive proof exploring the world beyond the browser.
+
+**CHALLENGE-ADDED WEBMCP WORK:** This submission proves the human-agent interaction model inside the browser. WebMCP operates the same live state and visible experience used by the player. WebMCP is not currently implemented natively inside the Unreal proof.
+
+**FUTURE PRODUCT VISION:** Future Unreal and 3D experiences may extend this interaction philosophy to richer character, NPC, and world interactions. This is future direction, not functionality claimed or demonstrated in the current submission.
 
 ## Built with
 
